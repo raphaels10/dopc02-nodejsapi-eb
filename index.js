@@ -8,8 +8,8 @@ app.get("/", (req, res) => {
 })
 
 app.get("/liveness", (req, res) => {
-    const message = {status: "OK"}
-    return res.status(200).json(message)
+    const message = {status: "UNHEALTHY"}
+    return res.status(500).json(message)
 })
 
 const port = process.env["PORT"] ? parseInt(process.env["PORT"]) : 5000
